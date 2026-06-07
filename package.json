@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
+    "@expo/metro-runtime": "~56.0.11",
+    "@infinitered/react-native-mlkit-text-recognition": "^5.0.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~56.0.3",
+    "expo-document-picker": "~56.0.4",
+    "expo-file-system": "~56.0.7",
+    "expo-image-manipulator": "~56.0.13",
+    "expo-image-picker": "~56.0.12",
+    "expo-secure-store": "~56.0.4",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
-    "react-native": "0.85.3"
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-web": "^0.21.2"
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
@@ -14,8 +24,9 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "postinstall": "node scripts/patch-mlkit-text-recognition.js",
     "web": "expo start --web"
   },
   "private": true

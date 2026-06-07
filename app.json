@@ -7,11 +7,15 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.anonymous.Schuelerauswahl"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F4F7F2",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +24,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Schuelerauswahl nutzt die Kamera, um Edupage-Screenshots lokal zu importieren.",
+          "microphonePermission": false,
+          "photosPermission": "Schuelerauswahl nutzt Fotos, um Edupage-Screenshots lokal zu importieren."
+        }
+      ]
+    ]
   }
 }
